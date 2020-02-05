@@ -1,0 +1,26 @@
+spring:
+  security:
+    oauth2:
+      # see https://docs.spring.io/spring-security-oauth2-boot/docs/current/reference/html/boot-features-security-oauth2-resource-server.html
+      resourceserver:
+        jwt:
+          # only used for the OpenApi docs login
+          authorization-url: http://localhost:8080/oauth/authorize
+          # only used for the OpenApi docs login
+          token-url: http://localhost:8080/oauth/token
+          key-value: |
+            -----BEGIN PUBLIC KEY-----
+            MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAySnjknfzbc3yrpH3hqhi
+            beQVfgAapUKfMzrgj+RjhwcJK9q1BoEpOo0WEULB3xiy2TFPWz/zMUS3Be5Ia3EI
+            msIdPy5AXqynXg7H6DIToCw/x3zrvoFPOYEKvTLht9vGOg0ApsX12URFW3Cz45Tv
+            3I/yjVQca85Vu6z6A5Q6SsiySi9abPJB4iG/W5dySughOaAJPm0P0q6inywXQhVw
+            R/426nsB9yE1bxG2k5/fAd7G61aQqpopimgZWiCLU/idBTFcDnV6T9rq2rXUgvfI
+            d1E4CG400+0f8ONpHmslfHTmfSVCQr2vwc0wKWFY6oEOnkS/4sF7B+2wgmB4l6SJ
+            0wIDAQAB
+            -----END PUBLIC KEY-----
+springdoc:
+  swagger-ui:
+    oauth:
+      client-id: some_id
+      client-secret: secret
+    oauth2RedirectUrl: /swagger-ui/oauth2-redirect.html
