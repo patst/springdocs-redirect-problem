@@ -23,4 +23,3 @@ springdoc:
     oauth:
       client-id: some_id
       client-secret: secret
-    oauth2RedirectUrl: /swagger-ui/oauth2-redirect.html

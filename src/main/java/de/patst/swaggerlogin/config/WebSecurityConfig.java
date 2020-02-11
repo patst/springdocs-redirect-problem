@@ -29,7 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   protected void configure(HttpSecurity http) throws Exception {
     http
         .authorizeRequests()
-        .antMatchers("/actuator/**", "/swagger-ui/**", "/v3/api-docs/**", "/oauth/**").permitAll()
+        .antMatchers("/actuator/**", "/swagger-ui/**", "/v3/api-docs/**", "/oauth/**", "/oauth2-redirect.html").permitAll()
         .and()
         .authorizeRequests().anyRequest().authenticated()
         .and().oauth2ResourceServer().jwt().decoder(jwtDecoderByPublicKeyValue());
