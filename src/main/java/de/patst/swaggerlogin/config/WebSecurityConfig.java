@@ -31,6 +31,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .authorizeRequests()
         .antMatchers("/actuator/**", "/swagger-ui/**", "/v3/api-docs/**", "/oauth/**", "/oauth2-redirect.html").permitAll()
         .and()
+            .mvcMatcher("/oauth/**").csrf().disable().anonymous().and()
         .authorizeRequests().anyRequest().authenticated()
         .and().oauth2ResourceServer().jwt().decoder(jwtDecoderByPublicKeyValue());
   }
